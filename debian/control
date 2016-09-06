@@ -1,0 +1,23 @@
+Source: libarctica-core-perl
+Section: perl
+Priority: optional
+Build-Depends:
+ cdbs,
+ debhelper (>= 9),
+Build-Depends-Indep:
+ perl (>= 5.8.0),
+Maintainer: Arctica Project Developers <devs@lists.arctica-project.org>
+Uploaders:
+ Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Homepage: https://arctica-project.org/
+Vcs-Git: https://github.com/ArcticaProject/perl-Arctica-Core
+Vcs-Browser: https://github.com/ArcticaProject/perl-Arctica-Core
+Standards-Version: 3.9.7
+
+Package: libarctica-core-perl
+Architecture: all
+Depends:
+ ${perl:Depends},
+ ${misc:Depends},
+Description: Core Perl modules for the Arctica Framework
+ FIXME: Some descripttive text needs to go here...
