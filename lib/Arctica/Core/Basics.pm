@@ -13,7 +13,7 @@
 #
 ################################################################################
 #
-# Copyright (C) 2015-2016 The Arctica Project 
+# Copyright (C) 2015-2016 The Arctica Project
 # http://http://arctica-project.org/
 #
 # This code is dual licensed: strictly GPL-2 or AGPL-3+
@@ -88,7 +88,7 @@ sub aex_initNameClassVersion {
 	} else {
 		$NVC{'app_version'} = "0.0.0.0";#LAZY DEV FORGOT VERSION DECL!?!
 	}
-	
+
 	($NVC{'self_aID'},$NVC{'parent_aID'}) = setncycle_parent_aid($NVC{'app_name'} );
 
 	return %NVC;
@@ -134,7 +134,7 @@ sub genARandom {
 			$r_string .= $p_chars[int(rand($#p_chars + 1))];
 		}
 		return "$time$r_string";
-		
+
 	} elsif ($in_type eq "key") {
 		if ($in_length =~ /^(\d{1,})$/) {
 			$in_length = $1;
@@ -154,7 +154,7 @@ sub genARandom {
 			$r_string .= $p_chars[int(rand($#p_chars + 1))];
 		}
 		return $r_string;
-		
+
 	} elsif ($in_type eq "dirtail") {
 		if ($in_length =~ /^(\d{1,})$/) {
 			$in_length = $1;
@@ -174,7 +174,7 @@ sub genARandom {
 			$r_string .= $p_chars[int(rand($#p_chars + 1))];
 		}
 		return $r_string;
-		
+
 	} else {
 		die("INVALID RANDOM TYPE?");
 	}
@@ -210,8 +210,8 @@ sub arcticaAArt {
 	my $leftPadding = (($termwidth - $baWidest)/2);
 	foreach my $baLine (@baseArt) {
 		if ($boxIt eq 1) {#$termwidth
-			$baLine =~ s/^(.*)/'#' . ' ' x ($leftPadding-1) . $1 . 
-			 ' ' x ($termwidth-(length($baLine)+($leftPadding+1))) 
+			$baLine =~ s/^(.*)/'#' . ' ' x ($leftPadding-1) . $1 .
+			 ' ' x ($termwidth-(length($baLine)+($leftPadding+1)))
 			 . '#'/ge;
 		} else {
 			$baLine =~ s/^(.*)/' ' x $leftPadding . $1/ge;
@@ -220,7 +220,7 @@ sub arcticaAArt {
 	}
 	if ($boxIt eq 1) {#$termwidth
 		$finalAArt =~ s/^(.*)/'#' x $termwidth . "\n". $1/e;
-		$finalAArt =~ s/(.*)$/$1 . "\n#" . ' ' x ($termwidth-2). 
+		$finalAArt =~ s/(.*)$/$1 . "\n#" . ' ' x ($termwidth-2).
 		 "#\n". '#' x $termwidth . "\n"/e;
 	}
 	return $finalAArt;

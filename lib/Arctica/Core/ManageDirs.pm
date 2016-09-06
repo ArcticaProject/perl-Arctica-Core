@@ -13,7 +13,7 @@
 #
 ################################################################################
 #
-# Copyright (C) 2015-2016 The Arctica Project 
+# Copyright (C) 2015-2016 The Arctica Project
 # http://http://arctica-project.org/
 #
 # This code is dual licensed: strictly GPL-2 or AGPL-3+
@@ -90,7 +90,7 @@ sub new {
 		}
 
 		unless (-d $check_arctica_home) {
-			mkdir($check_arctica_home) 
+			mkdir($check_arctica_home)
 				or die("ManageDirs: Failed to create .arctica 'HOME' directory");
 		}
 
@@ -134,7 +134,7 @@ sub permZealot {
 	$the_path =~ s/\n//g;
 
 	if (-f $the_path) {
-		chmod(0600,$the_path) 
+		chmod(0600,$the_path)
 			or die("permZealot: Can't set permissions on \"$the_path\"!");
 
 		unless (check_secure_permissions($the_path)) {
@@ -142,7 +142,7 @@ sub permZealot {
 		}
 		BugOUT(9,"permZealot-> set chmod 0600 for file $the_path");
 	} elsif (-d $the_path) {
-		chmod(0700,$the_path) 
+		chmod(0700,$the_path)
 			or die("permZealot: Can't set permissions on \"$the_path\"!");
 
 		unless (check_secure_permissions($the_path)) {
@@ -150,7 +150,7 @@ sub permZealot {
 		}
 		BugOUT(9,"permZealot-> set chmod 0600 for dir $the_path");
 	} elsif (-S $the_path) {
-		chmod(0700,$the_path) 
+		chmod(0700,$the_path)
 			or die("permZealot: Can't set permissions on \"$the_path\"!");
 
 		unless (check_secure_permissions($the_path)) {
@@ -169,35 +169,35 @@ sub create_new_adir {
 	my $the_random_dirtail = genARandom('dirtail',16);
 	my $potential_new_adir = ".arctica\-$the_sanetized_username\-$the_random_dirtail";
 	unless (-d "$the_tmp_dir/$potential_new_adir") {
-		mkdir("$the_tmp_dir/$potential_new_adir") 
+		mkdir("$the_tmp_dir/$potential_new_adir")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir'");
 		permZealot("$the_tmp_dir/$potential_new_adir");
 
-		mkdir("$the_tmp_dir/$potential_new_adir/cli") 
+		mkdir("$the_tmp_dir/$potential_new_adir/cli")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/cli'");
 		permZealot("$the_tmp_dir/$potential_new_adir/cli");
 
-		mkdir("$the_tmp_dir/$potential_new_adir/ses") 
+		mkdir("$the_tmp_dir/$potential_new_adir/ses")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/ses'");
 		permZealot("$the_tmp_dir/$potential_new_adir/ses");
 
-		mkdir("$the_tmp_dir/$potential_new_adir/con") 
+		mkdir("$the_tmp_dir/$potential_new_adir/con")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/con'");
 		permZealot("$the_tmp_dir/$potential_new_adir/con");
 
-		mkdir("$the_tmp_dir/$potential_new_adir/soc") 
+		mkdir("$the_tmp_dir/$potential_new_adir/soc")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/soc'");
 		permZealot("$the_tmp_dir/$potential_new_adir/soc");
-		mkdir("$the_tmp_dir/$potential_new_adir/soc/local/") 
+		mkdir("$the_tmp_dir/$potential_new_adir/soc/local/")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/soc/local/'");
 		permZealot("$the_tmp_dir/$potential_new_adir/soc/local/");
-		mkdir("$the_tmp_dir/$potential_new_adir/soc/remote/") 
+		mkdir("$the_tmp_dir/$potential_new_adir/soc/remote/")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/soc/remote/'");
 		permZealot("$the_tmp_dir/$potential_new_adir/soc/remote/");
-		mkdir("$the_tmp_dir/$potential_new_adir/soc/remote/in/") 
+		mkdir("$the_tmp_dir/$potential_new_adir/soc/remote/in/")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/soc/remote/in/'");
 		permZealot("$the_tmp_dir/$potential_new_adir/soc/remote/in/");
-		mkdir("$the_tmp_dir/$potential_new_adir/soc/remote/out/") 
+		mkdir("$the_tmp_dir/$potential_new_adir/soc/remote/out/")
 			or die("Unable to create '$the_tmp_dir/$potential_new_adir/soc/remote/out/'");
 		permZealot("$the_tmp_dir/$potential_new_adir/soc/remote/out/");
 
@@ -206,7 +206,7 @@ sub create_new_adir {
 	} else {
 		die("Realizing '$the_tmp_dir/$potential_new_adir' already exist?!");
 	}
-	
+
 	BugOUT(9,"Unexpected end of 'create_new_adir'");
 }
 
@@ -244,14 +244,14 @@ sub check_for_rtail_dir {
 			}
 		}
 		closedir(CHKDIR);
-		
+
 		my $pdircnt = @potential_dirs;
-		my $pdmtime = 0; 
+		my $pdmtime = 0;
 		if ($pdircnt > 0) {
 			if ($pdircnt > 1) {
 				warn("check_for_rtail_dir: more than one tmp dir?");
 			}
-			# Pick the one with highest mtime.... 
+			# Pick the one with highest mtime....
 			foreach my $pdir (@potential_dirs) {
 				$pdir =~ s/[\s\n]//g;
 				if (-d "$check_in_dir/$pdir") {
@@ -274,7 +274,7 @@ sub check_for_rtail_dir {
 			warn("check_for_rtail_dir: no existing dirs found!");
 			return 0;
 		}
-		
+
 	} else {
 		die("rtail check fail! This is not a dir: \"$check_in_dir\"");
 	}
@@ -332,7 +332,7 @@ sub user_owns_it {
 		unless ($the_user) {
 			$the_user = $ENV{'USER'};
 		}
-		
+
 		my $file_stat = stat($the_path);
 		if (getpwuid($file_stat->uid) eq $the_user) {
 			return 1;

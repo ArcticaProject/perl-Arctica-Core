@@ -13,7 +13,7 @@
 #
 ################################################################################
 #
-# Copyright (C) 2015-2016 The Arctica Project 
+# Copyright (C) 2015-2016 The Arctica Project
 # http://http://arctica-project.org/
 #
 # This code is dual licensed: strictly GPL-2 or AGPL-3+
@@ -76,7 +76,7 @@ my $SELF;
 sub new {
 	unless ($SELF) {
 		my ($className,$theRest) = @_;
-		my $ACF_self = {	
+		my $ACF_self = {
 			dummydata => {
 				somevalue	=> 12,
 				otherinfo	=> "The Other INFO!",
@@ -133,7 +133,7 @@ sub doSelfTerminate {
 	my $ACF_self = $_[1];
 	BugOUT(2,"Self-terminating... ($signal)");
 	$ACF_self->{'Glib'}{'MainLoop'}->quit;
-	return 0; 
+	return 0;
 }
 # THE END
 ################################################################################
