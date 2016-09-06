@@ -91,7 +91,7 @@ sub new {
 
 		unless (-d $check_arctica_home) {
 			mkdir($check_arctica_home) 
-				or die("ManageDirs: Fail to create .arctica 'HOME' directory");
+				or die("ManageDirs: Failed to create .arctica 'HOME' directory");
 		}
 
 		permZealot($check_arctica_home);

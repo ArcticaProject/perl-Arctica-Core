@@ -67,7 +67,7 @@ use Data::Dumper;
 use Glib 'TRUE', 'FALSE';
 # Be very selective about what (if any) gets exported by default:
 our @EXPORT = qw();
-# And be mindfull of what we lett the caller request too:
+# And be mindful of what we let the caller request, too:
 our @EXPORT_OK = qw( genARandom BugOUT BugOUT_dumpObjects );
 
 $ENV{'PATH'} = "";
@@ -113,10 +113,10 @@ sub append_aobject {
 		unless ($aco->{$to_append->{'aobject_name'}}) {
 			$aco->{$to_append->{'aobject_name'}} = $to_append;
 		} else {
-			die "Dont append an Arctica object more than once!";
+			die "Don't append an Arctica object more than once!";
 		}
 	} else {
-		die "Not an arctica object?!";
+		die "Not an Arctica object?!";
 	}
 }
 
@@ -131,7 +131,7 @@ sub return_self {
 sub doSelfTerminate {
 	my $signal = $_[0];
 	my $ACF_self = $_[1];
-	BugOUT(2,"Self Terminating... ($signal)");
+	BugOUT(2,"Self-terminating... ($signal)");
 	$ACF_self->{'Glib'}{'MainLoop'}->quit;
 	return 0; 
 }
