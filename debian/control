@@ -12,7 +12,7 @@ Uploaders:
 Homepage: https://arctica-project.org/
 Vcs-Git: https://github.com/ArcticaProject/perl-Arctica-Core
 Vcs-Browser: https://github.com/ArcticaProject/perl-Arctica-Core
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 
 Package: libarctica-core-perl
 Architecture: all
