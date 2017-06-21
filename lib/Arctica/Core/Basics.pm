@@ -135,6 +135,26 @@ sub genARandom {
 		}
 		return "$time$r_string";
 
+	} elsif ($in_type eq "short_id") {
+		if ($in_length =~ /^(\d{1,})$/) {
+			$in_length = $1;
+			if ($in_length < 4) {
+				$in_length = 4;
+			} elsif ($in_length > 16) {
+				$in_length = 16;
+			}
+		} else {
+			$in_length = 8;
+		}
+		srand();
+		my @p_chars = ('0'..'9','a'..'z','A'..'Z');
+		my $r_lenght = $in_length;
+		my $r_string;
+		for (my $i=0; $i<$r_lenght; $i++) {
+			$r_string .= $p_chars[int(rand($#p_chars + 1))];
+		}
+		return $r_string;
+
 	} elsif ($in_type eq "key") {
 		if ($in_length =~ /^(\d{1,})$/) {
 			$in_length = $1;
