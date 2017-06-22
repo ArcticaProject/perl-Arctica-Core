@@ -1,0 +1,5 @@
+#!/usr/bin/perl -T
+
+use Arctica::Core::ManageDirs;
+my $adirs =  Arctica::Core::ManageDirs->new();
+print "$adirs->{'tmp_adir'}\n";
