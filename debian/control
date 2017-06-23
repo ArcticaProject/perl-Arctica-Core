@@ -19,6 +19,7 @@ Architecture: all
 Depends:
  ${perl:Depends},
  ${misc:Depends},
+ libarctica-core-bugout-perl,
 Description: Core Perl modules for the Arctica Framework
  The Arctica Project brings forth a remote computing framework of
  enterprise grade and quality. The Arctica Framework is a highly
