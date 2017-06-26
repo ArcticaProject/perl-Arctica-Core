@@ -1,5 +1,5 @@
-libarctica-core-perl (0.0.0.1-0) UNRELEASED; urgency=medium
+libarctica-core-perl (0.0.0.1-0) unstable; urgency=medium
 
-  * No changelog entries here...
+  * No changelog entries here... See upstream ChangeLog.
 
- -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Fri, 18 Mar 2016 17:13:43 +0100
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Mon, 26 Jun 2017 21:50:55 +0200

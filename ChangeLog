@@ -1,0 +1,38 @@
+2017-06-23 13:44:19 +0200 Mike Gabriel (dff490d)
+
+	* debian/control: Add D (libarctica-core-perl):
+          libarctica-core-bugout-perl. (HEAD -> master,
+          origin/master, origin/HEAD, gh-arctica/master)
+
+2017-06-23 00:49:37 +0200 Mike Gabriel (bc39dda)
+
+	* Provide arctica-getdir. Formerly known as get_adir.
+
+2017-06-21 12:10:33 +0200 GZNGET FOSS Team (3fc4c7f)
+
+	* Add new type 'short_id' to getARandom().
+
+2016-09-06 22:44:10 +0200 Mike Gabriel (d49ea79)
+
+	* debian/control: Bump Standards: to 3.9.8. No changes needed.
+
+2016-09-06 22:43:51 +0200 Mike Gabriel (83b33d0)
+
+	* whitespace clean-up: Script-based whitespace clean-up.
+
+2016-09-06 22:43:15 +0200 Mike Gabriel (2e4cd2f)
+
+	* debian/control: Add LONG_DESCRIPTION.
+
+2016-09-06 17:28:45 +0200 Mike Gabriel (511b7dd)
+
+	* Add license files (AGPL-3+, strictly GPL-2).
+
+2016-09-06 17:25:12 +0200 Mike Gabriel (8446679)
+
+	* Typos: Amend some typo fixes.
+
+2016-09-06 16:29:56 +0200 GZNGET FOSS Team (77cf37e)
+
+	* Initial Arctica Core Commit
+
